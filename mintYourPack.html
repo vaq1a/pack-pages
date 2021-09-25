@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Oswald&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /*reset*/
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        input[type="number"]:hover,
+        input[type="number"]:focus {
+            -moz-appearance: number-input;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /*common*/
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .main {
+            padding: 59px 0 224px;
+            background-color: #000;
+            background-image: url("./img/fullBackground.png");
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+
+        /*layout*/
+        .container {
+            max-width: 1078px;
+            margin: 0 auto;
+            padding: 0 25px;
+            box-sizing: content-box;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /*Content*/
+
+        /*logotype*/
+        .logotype {
+            display: inline-block;
+            max-width: 383px;
+        }
+
+        .logotype__image {
+            height: unset;
+            max-width: 100%;
+        }
+
+        /*title*/
+        .title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 25px;
+            line-height: 1.2;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            color: #000000;
+            margin-top: 55px;
+            margin-bottom: 31px;
+        }
+
+        /*arrows*/
+        .arrows {
+            display: inline-block;
+            width: 21px;
+            height: 30px;
+            margin-bottom: 14px;
+        }
+
+        .arrows__image {
+            max-width: 100%;
+            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /*image cube*/
+        .cube {
+            max-width: 873px;
+        }
+
+        .cube__image {
+            height: unset;
+            max-width: 100%;
+        }
+
+        /*sticky*/
+        .sticky {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 18px;
+
+            max-width: 1078px;
+            position: fixed;
+            top: 20px;
+        }
+
+        .sticky__empty {
+            height: 50px;
+        }
+
+        /*button*/
+        .button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            flex-shrink: 0;
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            line-height: 1;
+            font-weight: 400;
+            color: #ffffff;
+            background-color: #0d3d69;
+            cursor: pointer;
+            border: 0;
+            width: 100%;
+        }
+
+        .button-text {
+            font-family: 'Roboto', sans-serif;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            text-decoration: underline;
+            color: #859aaa;
+            margin-left: 22px;
+            padding: 0;
+        }
+
+        .button:hover {
+            background-color: #248ae6;
+        }
+
+        /*button modifiers*/
+        .button_upper-case {
+            text-transform: uppercase;
+        }
+
+        .button_align-self-end {
+            align-self: end;
+            margin-right: 15px;
+        }
+
+        .button_h50 {
+            height: 50px;
+        }
+
+        .button_h60 {
+            height: 60px;
+        }
+
+        .button_w50 {
+            max-width: 50px;
+        }
+
+        .button_w177 {
+            padding: 17px;
+            max-width: 177px;
+        }
+
+        .button_w261 {
+            padding: 22px;
+            max-width: 261px;
+        }
+
+        /*form*/
+        .form {
+            display: flex;
+            justify-content: center;
+        }
+
+        .form.form-position {
+            margin-left: 56.587px;
+        }
+
+        .form__input {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            line-height: 42px;
+            font-weight: 400;
+            color: #ffffff;
+            border: 2px solid #ffffff;
+            background-color: transparent;
+            text-align: center;
+            box-sizing: border-box;
+            max-width: 143px;
+            min-width: 143px;
+            height: 50px;
+            padding: 1.5px;
+        }
+
+        .minus {
+            margin-right: 9px;
+        }
+
+        .plus {
+            margin-left: 9px;
+        }
+
+        /*subtext*/
+        .subtext {
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 400;
+            color: #859aaa;
+        }
+
+        .subtext__indent {
+            margin-top: 30px;
+            margin-bottom: 21px;
+        }
+
+        .subtext .subtext_isolated {
+            font-family: 'Oswald', sans-serif;
+            font-size: 18px;
+            line-height: 18px;
+            font-weight: 400;
+            color: #ffffff;
+            margin-left: 12px;
+            margin-right: 10px;
+        }
+
+        /*line*/
+        .line {
+            width: 156px;
+            height: 1px;
+            border: 0;
+            background-color: #4d6c87;
+        }
+
+        .line__indent {
+            margin-top: 64px;
+            margin-bottom: 74px;
+        }
+
+        /*description*/
+        .description {
+            max-width: 534px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .description__paragraph {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #859aaa;
+            margin-bottom: 20px;
+        }
+
+        .description__paragraph .description__paragraph_isolated {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /*list*/
+        .list {
+            margin-bottom: 20px;
+        }
+
+        .list__item {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: #859aaa;
+        }
+
+        .list__item .list__item_isolated {
+            color: #dcdcdc;
+        }
+
+        /*adaptive*/
+        @media screen and (min-width: 1400px) {
+            /*common*/
+            .main {
+                background-size: contain;
+            }
+        }
+
+        @media screen and (max-width: 1399px) {
+            /*common*/
+            .main {
+                background-size: cover;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            /*common*/
+            .main {
+                padding: 30px 0 100px;
+            }
+
+            /*form*/
+            .form {
+                flex-wrap: wrap;
+            }
+
+            .form.form-position {
+                margin-left: 0;
+            }
+
+            /*button*/
+            .button-text {
+                text-align: center;
+                width: auto;
+                margin-top: 9px;
+                margin-right: 22px;
+            }
+
+
+            /*sticky*/
+            .sticky {
+                position: static;
+            }
+
+            .button_sticky {
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 260px;
+            }
+
+            .button_sticky.activeSticky {
+                z-index: 9;
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="content">
+                <a href="/" class="logotype">
+                    <img class="logotype__image" src="./img/logotype-lg.png" alt="Logotype">
+                </a>
+
+                <div class="title">
+                    Mint your Pack
+                </div>
+
+                <div class="arrows">
+                    <img class="arrows__image" src="./img/arrows.png" alt="arrows">
+                </div>
+
+                <div class="cube">
+                    <picture>
+                        <source srcset="./img/cube-mobile.png" media="(max-width: 768px)">
+                        <img class="cube__image" src="./img/cube.png" alt="">
+                    </picture>
+                </div>
+
+                <div class="sticky">
+                    <div class="sticky__empty"></div>
+                    <button class="button button_h50 button_w177 button_align-self-end button_sticky">
+                        Connect Wallet
+                    </button>
+                </div>
+
+                <div class="form form-position">
+                    <button class="button button_h50 button_w50 minus">
+                        <svg width="12" height="2" viewBox="0 0 12 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0H12V2H0V0Z" fill="white"/>
+                        </svg>
+                    </button>
+                    <input class="form__input" type="number" value="0" min="0">
+                    <button class="button button_h50 button_w50 plus">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" width="2" height="12" fill="white"/>
+                            <rect y="5" width="12" height="2" fill="white"/>
+                        </svg>
+                    </button>
+                    <button class="button-text button_upper-case max">max</button>
+                </div>
+
+                <div class="subtext subtext__indent">
+                    Total: <span class="subtext_isolated">0,09 ETH</span> + gas fee
+                </div>
+
+                <button class="button button_h60 button_w261 button_upper-case">
+                    MINT PACK
+                </button>
+
+                <div class="subtext subtext__indent">
+                    Paks Left: <span class="subtext_isolated">214 / 1000</span>
+                </div>
+
+                <hr class="line line__indent" />
+
+                <div class="description">
+                    <p class="description__paragraph">
+                        The collection <span class="description__paragraph_isolated">UCube</span> consists of 25,000 procedurally generated Cubes that are ERC-721 tokens on the Ethereum blockchain.
+                    </p>
+                    <p class="description__paragraph">
+                        A Cube is a unique NFT token and the main asset that will allow you to participate in various game mechanics:<br> build Routes, earn Achievements, craft new Cubes, and more.
+                    </p>
+                    <p class="description__paragraph">
+                        <span class="description__paragraph_isolated">Cubes are contained in 10000 Packs,</span><br>
+                        each of those contains 2-5 Cubes
+                    </p>
+                    <ul class="list">
+                        <li class="list__item">
+                            <span class="list__item_isolated">64% chance — x2 Cubes</span> in one Pack.
+                        </li>
+                        <li class="list__item">
+                            <span class="list__item_isolated">27% chance — x3 Cubes</span> in one Pack.
+                        </li>
+                        <li class="list__item">
+                            <span class="list__item_isolated">8% chance — x4 Cubes</span> in one Pack.
+                        </li>
+                        <li class="list__item">
+                            <span class="list__item_isolated">1% chance — x5 Cubes</span> in one Pack.
+                        </li>
+                    </ul>
+                    <p class="description__paragraph">
+                        The first 400 packs (1000 Cubes) will be distributed as a gift to Mint Pass holders.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener("load", () => {
+            let buttonSticky = document.querySelector('.button_sticky'),
+                buttonStickyOffsetTop = offset(buttonSticky),
+                mobileDetect = window.innerWidth <= 768,
+                countInput = document.querySelector('.form__input');
+
+            const MAX_VALUE = 100;
+
+            //support function
+            function offset(el) {
+                let rect = el.getBoundingClientRect(),
+                    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                return rect.top + scrollTop;
+            }
+
+            // init scroll
+            if(mobileDetect) {
+                window.addEventListener('scroll', () => {
+                    if (pageYOffset + 20 >= buttonStickyOffsetTop) {
+                        buttonSticky.classList.add('activeSticky');
+                    } else if (pageYOffset < buttonStickyOffsetTop) {
+                        buttonSticky.classList.remove('activeSticky');
+                    }
+                });
+            }
+
+            //form
+            countInput.max = MAX_VALUE;
+
+            document.querySelector('.minus').addEventListener('click', () => {
+                if(parseInt(countInput.value) >= 0 && parseInt(countInput.value) - 1 !== -1) {
+                    countInput.value = parseInt(countInput.value) - 1;
+                }
+            });
+
+            document.querySelector('.plus').addEventListener('click', () => {
+                if(parseInt(countInput.value) >= 0) {
+                    countInput.value = parseInt(countInput.value) + 1;
+                }
+            });
+
+            document.querySelector('.max').addEventListener('click', () => {
+                countInput.value = MAX_VALUE;
+            });
+        });
+    </script>
+</body>
+</html>
+
